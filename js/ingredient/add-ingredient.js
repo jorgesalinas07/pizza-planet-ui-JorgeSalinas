@@ -41,7 +41,7 @@ function getIngredientData() {
  * Shows a notification when the order is accepted
  */
 function showNotification() {
-    let ingredientAlert = $("#ingredient-alert");
-    ingredientAlert.toggle();
-    setTimeout(() => ingredientAlert.toggle(), 5000);
+    let beverageAlert = document.getElementById("ingredient-alert");
+    beverageAlert.classList.remove("ingredient-alert");
+    setTimeout(() => beverageAlert.classList.toggle("ingredient-alert"), 2000);
 }
