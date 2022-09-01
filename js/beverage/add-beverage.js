@@ -1,8 +1,8 @@
-function postIngredient(ingredient) {
+function postBeverage(beverage) {
 
-    fetch('http://127.0.0.1:5000/ingredient/', {
+    fetch('http://127.0.0.1:5000/beverage/', {
         method: 'POST',
-        body: JSON.stringify(ingredient),
+        body: JSON.stringify(beverage),
         headers: {
             "Content-Type": "application/json; charset=utf-8",
         },
@@ -16,11 +16,11 @@ function postIngredient(ingredient) {
 /**
  * Get the form and submit it with fetch API
  */
-let ingredientForm = $("#ingredient-form");
-ingredientForm.submit(event => {
+let beverageForm = $("#beverage-form");
+beverageForm.submit(event => {
 
-    let ingredient = getIngredientData();
-    postIngredient(ingredient);
+    let beverage = getBeverageData();
+    postBeverage(beverage);
 
     event.preventDefault();
     event.currentTarget.reset();
@@ -29,10 +29,10 @@ ingredientForm.submit(event => {
 /**
  * Gets the order data with JQuery
  */
-function getIngredientData() {
+function getBeverageData() {
 
     return {
-        name: $("input[name='name']").val(),
+        type: $("input[name='type']").val(),
         price: $("input[name='price']").val(),
     };
 }
@@ -41,7 +41,8 @@ function getIngredientData() {
  * Shows a notification when the order is accepted
  */
 function showNotification() {
-    let beverageAlert = document.getElementById("ingredient-alert");
+    let beverageAlert = document.getElementById("beverage-alert");
     beverageAlert.classList.remove("ingredient-alert");
-    setTimeout(() => beverageAlert.classList.toggle("ingredient-alert"), 2000);
+    setTimeout(() => beverageAlert.classList.toggle("ingredient-alert"), 4000);
+  
 }
