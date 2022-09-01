@@ -54,7 +54,7 @@
     <div class="container">
       <!-- Notification Area -->
 
-      <div id="order-alert" class="alert alert-success" role="alert">
+      <div id="order-alert" class="alert alert-success ingredient-alert" role="alert">
         <h4 class="alert-heading">Great!</h4>
         <p>Your order was accepted successfully</p>
       </div>
@@ -100,8 +100,9 @@
           <table class="table bg-white table-bordered">
             <thead class="thead-dark">
               <tr>
-                <th class="w-50">Choose a size</th>
-                <th class="w-50">Choose your ingredients</th>
+                <th class="w-30">Choose a size</th>
+                <th class="w-30">Choose your ingredients</th>
+                <th class="w-30">Choose your beverages</th>
               </tr>
             </thead>
             <tbody>
@@ -126,6 +127,17 @@
                       </div>
                     </template>
                     <tbody></tbody>
+                  </table>
+                </td>
+                <td>
+                  <table id="beverages">
+                    <template id="beverages-template">
+                      <div class="form-check">
+                        <input name="beverages" value="{{_id}}" class="form-check-input" type="checkbox" />
+                        <label class="form-check-label" for="defaultCheck1"> {{type}} - ${{price}} </label>
+                      </div>
+                    </template>
+                    <tbody id="table_beverage_body"></tbody>
                   </table>
                 </td>
               </tr>

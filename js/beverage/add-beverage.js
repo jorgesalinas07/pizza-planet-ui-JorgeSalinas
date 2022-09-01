@@ -41,9 +41,6 @@ function getBeverageData() {
  * Shows a notification when the order is accepted
  */
 function showNotification() {
-    // let beverageAlert = ("#beverage-alert");
-    // beverageAlert.toggle();
-    // setTimeout(() => beverageAlert.toggle(), 5000);
     let beverageAlert = document.getElementById("beverage-alert");
     beverageAlert.classList.remove("ingredient-alert");
     setTimeout(() => beverageAlert.classList.toggle("ingredient-alert"), 4000);
